@@ -1,0 +1,13 @@
+<resources>
+    <string name="dialog_done">Done</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_uint_year"> </string>
+    <string name="dialog_uint_month"> </string>
+    <string name="dialog_uint_day"> </string>
+    <string name="dialog_alert">Alert</string>
+    <string name="dialog_message">Message</string>
+    <string name="dialog_input_content">Input Content</string>
+    <string name="dialog_choice_one">Choice</string>
+    <string name="dialog_title">Title</string>
+    <string name="dialog_option">Option</string>
+</resources>

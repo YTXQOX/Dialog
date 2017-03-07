@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#99000000">
+
+    <RelativeLayout
+        android:id="@+id/box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f8f8f8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/txtMessage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="22dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/dialog_title"
+                android:textColor="#444444"
+                android:textSize="15dp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="201dp"
+                android:background="@android:color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="350">
+
+                        <com.ljstudio.pangpang.dialog.view.BouncingListView
+                            android:id="@+id/listFirst"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/txtUintFirst"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp"
+                            android:layout_centerInParent="true"
+                            android:gravity="top"
+                            android:paddingLeft="80dp"
+                            android:text="@string/dialog_uint_year"
+                            android:textColor="#FF6A00"
+                            android:textSize="8sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/lineSecond"
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="#D8D8D8" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlSecond"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="390">
+
+                        <com.ljstudio.pangpang.dialog.view.BouncingListView
+                            android:id="@+id/listSecond"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/txtUintSecond"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp"
+                            android:layout_centerInParent="true"
+                            android:gravity="top"
+                            android:paddingLeft="60dp"
+                            android:text="@string/dialog_uint_month"
+                            android:textColor="#FF6A00"
+                            android:textSize="8sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/lineThird"
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="#D8D8D8" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlThird"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="390">
+
+                        <com.ljstudio.pangpang.dialog.view.BouncingListView
+                            android:id="@+id/listThird"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/txtUintThird"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp"
+                            android:layout_centerInParent="true"
+                            android:gravity="top"
+                            android:paddingLeft="60dp"
+                            android:text="@string/dialog_uint_day"
+                            android:textColor="#FF6A00"
+                            android:textSize="8sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imgBG"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/dialog_select_box" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="23dp"
+                android:layout_marginTop="23dp"
+                android:orientation="horizontal">
+
+                <com.ljstudio.pangpang.dialog.view.TouchableTextView
+                    android:id="@+id/btnLeft"
+                    android:layout_width="157dp"
+                    android:layout_height="40dp"
+                    android:background="@mipmap/dialog_button_left"
+                    android:gravity="center"
+                    android:text="@string/dialog_cancel"
+                    android:textColor="#737373"
+                    android:textSize="13dp" />
+
+                <com.ljstudio.pangpang.dialog.view.TouchableTextView
+                    android:id="@+id/btnRight"
+                    android:layout_width="157dp"
+                    android:layout_height="40dp"
+                    android:layout_toRightOf="@+id/btnLeft"
+                    android:background="@mipmap/dialog_button_right"
+                    android:gravity="center"
+                    android:text="@string/dialog_done"
+                    android:textColor="#737373"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
