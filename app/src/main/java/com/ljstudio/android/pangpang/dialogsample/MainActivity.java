@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onSelected(int index, String option) {
 
                     }
-                }, getString(R.string.gender), 0, getString(R.string.male), getString(R.string.female));
+                }, getString(R.string.gender), 0, getString(R.string.male), getString(R.string.female), getString(R.string.male), getString(R.string.female));
                 optionsDialog.show();
             }
         });
