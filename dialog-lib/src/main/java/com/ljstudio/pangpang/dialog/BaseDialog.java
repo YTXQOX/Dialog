@@ -34,7 +34,7 @@ abstract class BaseDialog {
         params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
         params.width = ViewGroup.LayoutParams.WRAP_CONTENT;
         dialogWindow.setAttributes(params);
-        dialogWindow.setGravity(Gravity.CENTER);
+        dialogWindow.setGravity(Gravity.BOTTOM);
 
         initEvents();
     }
