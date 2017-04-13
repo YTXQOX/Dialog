@@ -17,8 +17,9 @@ import java.util.List;
 
 public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewFormater<String> {
 
-    private ListView listView;
     private TextView titleView;
+    private ListView listView;
+    private TextView buttonView;
 
     private List<String> items;
     private int selected;
@@ -42,11 +43,15 @@ public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewF
 
         this.listener = listener;
         this.selected = selected;
-        listView = (ListView) findViewById(R.id.listView);
+
         titleView = (TextView) findViewById(R.id.txtTitle);
+        listView = (ListView) findViewById(R.id.listView);
+        buttonView = (TextView) findViewById(R.id.txtButton);
+
         items = Arrays.asList(options);
         listView.setAdapter(new CommonListAdapter<>(context, items, null, R.layout.dialog_item_option, 0, this));
         setTitle(title);
+        setButton(title);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -54,6 +59,13 @@ public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewF
                 if (listener != null) {
                     listener.onSelected(i, items.get(i));
                 }
+                dismiss();
+            }
+        });
+
+        buttonView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 dismiss();
             }
         });
@@ -66,6 +78,12 @@ public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewF
     private void setTitle(String title) {
         if (title != null) {
             titleView.setText(title);
+        }
+    }
+
+    private void setButton(String title) {
+        if (title != null) {
+            buttonView.setText(title);
         }
     }
 
