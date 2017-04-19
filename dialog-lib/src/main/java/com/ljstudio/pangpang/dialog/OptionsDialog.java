@@ -22,13 +22,15 @@ public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewF
     private TextView buttonView;
 
     private List<String> items;
-    private int selected;
 
+    private int selected;
     private int selectedColor;
-    private int selectedArrowImage;
     private int defaultColor;
 
+    private int selectedArrowImage;
+
     private IListener listener;
+
 
     public OptionsDialog(Context context, IListener listener, String title, String... options) {
         this(context, listener, title, -1, options);
