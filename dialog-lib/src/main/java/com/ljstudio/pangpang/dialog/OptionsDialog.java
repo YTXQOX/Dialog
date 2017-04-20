@@ -98,6 +98,7 @@ public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewF
     public void formatItemView(CommonListAdapter<String> adapter, String item, View view, int index, boolean group) {
         TextView txt = (TextView) view.findViewById(R.id.txtOption);
         txt.setText(item);
+        txt.setTextColor(Color.parseColor("#000000"));
 
 //        ImageView imgArrow = (ImageView) view.findViewById(R.id.imgSelected);
 //        imgArrow.setVisibility(index == selected ? View.VISIBLE : View.INVISIBLE);
