@@ -4,10 +4,8 @@ import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 
 import com.ljstudio.pangpang.dialog.adapter.CommonListAdapter;
 
@@ -15,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewFormater<String> {
+public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewFormatter<String> {
 
     private TextView titleView;
     private ListView listView;
@@ -37,7 +35,7 @@ public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewF
     }
 
     public OptionsDialog(Context context, final IListener listener, String title, int selected, String... options) {
-        this(context, listener, title, selected, Color.parseColor("#FF6A00"), R.mipmap.dialog_option_selected, options);
+        this(context, listener, title, selected, Color.parseColor("#00ffffff"), R.mipmap.dialog_option_selected, options);
     }
 
     public OptionsDialog(Context context, final IListener listener, String title, int selected, int tintColor, int selectedArrowImage, String... options) {
@@ -100,12 +98,21 @@ public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewF
     public void formatItemView(CommonListAdapter<String> adapter, String item, View view, int index, boolean group) {
         TextView txt = (TextView) view.findViewById(R.id.txtOption);
         txt.setText(item);
-        ImageView imgArrow = (ImageView) view.findViewById(R.id.imgSelected);
-        imgArrow.setVisibility(index == selected ? View.VISIBLE : View.INVISIBLE);
-        if (index == selected) {
-            imgArrow.setImageResource(selectedArrowImage);
+
+//        ImageView imgArrow = (ImageView) view.findViewById(R.id.imgSelected);
+//        imgArrow.setVisibility(index == selected ? View.VISIBLE : View.INVISIBLE);
+//        if (index == selected) {
+//            imgArrow.setImageResource(selectedArrowImage);
+//        }
+//        txt.setTextColor(index == selected ? selectedColor : defaultColor);
+
+        if (0 == index) {
+            txt.setBackground(getContext().getResources().getDrawable(R.drawable.custom_up_selector));
+        } else if ((items.size() - 1) == index) {
+            txt.setBackground(getContext().getResources().getDrawable(R.drawable.custom_down_selector));
+        } else {
+            txt.setBackground(getContext().getResources().getDrawable(R.drawable.dialog_option_color));
         }
-        txt.setTextColor(index == selected ? selectedColor : defaultColor);
     }
 
 

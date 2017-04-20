@@ -20,13 +20,13 @@ public class CommonListAdapter<T> extends BaseAdapter {
     Set<Long> splitItems;
     int itemLayoutResId;
     int groupLayoutResId;
-    WeakReference<ViewFormater> formater;
+    WeakReference<ViewFormatter> formatter;
 
-    public CommonListAdapter(Context cxt, List<T> items, Set<Long> splitItems, int itemLayoutResId, int groupLayoutResId, ViewFormater<T> formater) {
+    public CommonListAdapter(Context cxt, List<T> items, Set<Long> splitItems, int itemLayoutResId, int groupLayoutResId, ViewFormatter<T> formater) {
         this.cxt = cxt;
         this.items = items;
         this.splitItems = splitItems;
-        this.formater = new WeakReference<ViewFormater>(formater);
+        this.formatter = new WeakReference<ViewFormatter>(formater);
         this.itemLayoutResId = itemLayoutResId;
         this.groupLayoutResId = groupLayoutResId;
     }
@@ -64,11 +64,11 @@ public class CommonListAdapter<T> extends BaseAdapter {
                 convertView.setTag(R.layout.dialog_list_group_header, false);
             }
         }
-        formater.get().formatItemView(this, items.get(position), convertView, position, group);
+        formatter.get().formatItemView(this, items.get(position), convertView, position, group);
         return convertView;
     }
 
-    public static interface ViewFormater<T> {
+    public static interface ViewFormatter<T> {
         void formatItemView(CommonListAdapter<T> adapter, T item, View view, int index, boolean group);
     }
 }

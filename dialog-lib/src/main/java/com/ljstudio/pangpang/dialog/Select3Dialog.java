@@ -14,7 +14,7 @@ import java.util.List;
 
 
 
-public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewFormater<String> {
+public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewFormatter<String> {
 
     private TextView txtTitle;
 
@@ -219,7 +219,7 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
         items.add(0, "");
         items.add("");
         items.add("");
-        adapterThird = new CommonListAdapter<String>(getContext(), itemsThird, null, R.layout.dialog_item_select, 0, this);
+        adapterThird = new CommonListAdapter<>(getContext(), itemsThird, null, R.layout.dialog_item_select, 0, this);
         listThird.setVisibility(View.VISIBLE);
         listThird.setItemHeight(dp2px(40));
         listThird.setAdapter(adapterThird);

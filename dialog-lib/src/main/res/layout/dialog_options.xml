@@ -30,8 +30,7 @@
         android:layout_below="@id/txtTitle"
         android:background="@drawable/custom_bg"
         android:divider="#e2e2e2"
-        android:dividerHeight="1dp"
-        android:listSelector="@drawable/dialog_option_color" />
+        android:dividerHeight="1dp" />
 
     <TextView
         android:id="@+id/txtButton"
@@ -40,7 +39,7 @@
         android:layout_below="@id/listView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
-        android:background="@drawable/custom_bg"
+        android:background="@drawable/custom_selector"
         android:gravity="center"
         android:text="取消"
         android:textColor="#444444"
