@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.ljstudio.pangpang.dialog.utils.ScreenUtil;
+
 import java.lang.ref.WeakReference;
 
 
@@ -32,7 +34,9 @@ abstract class BaseDialog {
 //        dialogWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         WindowManager.LayoutParams params = dialogWindow.getAttributes();
         params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-        params.width = ViewGroup.LayoutParams.WRAP_CONTENT;
+        params.width = ViewGroup.LayoutParams.MATCH_PARENT;
+        params.width = ScreenUtil.getScreenWidth(context) - (ScreenUtil.dip2px(context, 14) * 2);
+
         dialogWindow.setAttributes(params);
         dialogWindow.setGravity(Gravity.BOTTOM);
 
