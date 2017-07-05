@@ -1,4 +1,4 @@
-# dialogsample
+# Dialog
 
 ## 
 Dialog show sample
